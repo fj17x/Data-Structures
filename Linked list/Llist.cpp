@@ -1,54 +1,44 @@
 #include <iostream>
 using namespace std;
 
-struct Node
+// Create 5 nodes and access them using the first node.
+
+class Node
 {
     int data;
-    struct Node *next;
-} * head;
+    Node *next;
 
-void createNode(int n)
-{
-
-    int data;
-    cout << "Enter data of 1st node: ";
-    cin >> data;
-
-    head = (struct Node *)malloc(sizeof(struct Node));
-    head->data = data;
-    head->next = NULL;
-
-    struct Node *temp = head;
-
-    for (int i = 0; i < n - 1; i++)
+public:
+    void enter(Node *x = NULL)
     {
-        struct Node *newnode = (struct Node *)malloc(sizeof(struct Node));
-
-        cout << "Enter data of " << i + 2 << "th node: ";
+        cout << "\n Enter data: ";
         cin >> data;
-        newnode->data = data;
-        newnode->next = NULL;
-
-        temp->next = newnode;
-        temp = temp->next;
+        next = x;
     }
-}
 
-void travese()
-{
-    struct Node *temp = head;
-
-    while (temp != NULL)
+    Node *gnext()
     {
-        cout << temp->data << endl;
-        temp = temp->next;
+        return next;
     }
-}
+
+    int gdata()
+    {
+        return data;
+    }
+
+} n1, n2, n3, n4, n5;
 
 int main()
 {
-    int n;
-    n = 5;
-    createNode(n);
-    travese();
+    n1.enter(&n2);
+    n2.enter(&n3);
+    n3.enter(&n4);
+    n4.enter(&n5);
+    n5.enter();
+
+    cout << "\n 1st Node: " << n1.gdata();
+    cout << "\n Accessing 2nd node using first: " << n1.gnext()->gdata();
+    cout << "\n Accessing 3nd node using first: " << n1.gnext()->gnext()->gdata();
+    cout << "\n Accessing 4th node using first: " << n1.gnext()->gnext()->gnext()->gdata();
+    cout << "\n Accessing 5th node using first: " << n1.gnext()->gnext()->gnext()->gnext()->gdata();
 }
