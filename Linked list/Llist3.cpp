@@ -57,16 +57,22 @@ void insert(int search)
 
     newtemp->enter();
 
-    while (temp != NULL)
+    if (temp->gdata() == search)
     {
-        if (temp->gnext()->gdata() == search)
-        {
-            newtemp->cnext(temp->gnext());
-            temp->cnext(newtemp);
-            break;
-        }
-        temp = temp->gnext();
+        newtemp->cnext(temp);
+        head = newtemp;
     }
+    else
+        while (temp != NULL)
+        {
+            if (temp->gnext()->gdata() == search)
+            {
+                newtemp->cnext(temp->gnext());
+                temp->cnext(newtemp);
+                break;
+            }
+            temp = temp->gnext();
+        }
 }
 
 void travese()
