@@ -38,8 +38,7 @@ void createNode(int n)
     head = new Node;
     head->enter();
 
-    Node *temp = new Node;
-    temp = head;
+    Node *temp = head;
 
     for (int i = 0; i < n - 1; i++)
     {
