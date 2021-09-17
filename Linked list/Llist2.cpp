@@ -36,7 +36,7 @@ public:
 void createNode(int n)
 {
     head = new Node;
-    (*head).enter();
+    head->enter();
 
     Node *temp = new Node;
     temp = head;
@@ -44,9 +44,9 @@ void createNode(int n)
     for (int i = 0; i < n - 1; i++)
     {
         Node *newnode = new Node;
-        (*newnode).enter();
-        (*temp).cnext(newnode);
-        temp = (*temp).gnext();
+        newnode->enter();
+        temp->cnext(newnode);
+        temp = temp->gnext();
     }
 }
 
@@ -56,8 +56,8 @@ void travese()
 
     while (temp != NULL)
     {
-        cout << "\n " << (*temp).gdata() << endl;
-        temp = (*temp).gnext();
+        cout << "\n " << temp->gdata() << endl;
+        temp = temp->gnext();
     }
 }
 
