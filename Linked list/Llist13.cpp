@@ -110,6 +110,7 @@ void createNode(int n)
             if (temp->gnext() == NULL && newnode->gdata() > temp->gdata())
             {
                 temp->cnext(newnode);
+                break;
             }
         }
     }
