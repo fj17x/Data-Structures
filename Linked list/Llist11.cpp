@@ -101,10 +101,7 @@ int main()
     cout << "Enter number of nodes to create: ";
     cin >> n;
     createNode(n);
-
-    cout << "\nBefore...\n";
-    travese();
-
+    
     cout << "\n Enter the data to delete: ";
     cin >> search;
     del(search);
