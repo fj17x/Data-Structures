@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//Create n number of nodes and traverse through them.
+//Create a linked list that stores details about students.
 
 class Node
 {
