@@ -56,6 +56,8 @@ void createNode(int n)
     {
         Node *newnode = new Node;
         newnode->enter();
+        
+        // allow first two entries
 
         if (i == 0)
         {
@@ -71,6 +73,8 @@ void createNode(int n)
 
         temp = head;
 
+        // checks if new node data is smaller than head data    
+        
         if (newnode->gdata() < head->gdata())
         {
             newnode->cnext(head);
@@ -81,6 +85,8 @@ void createNode(int n)
         while (temp->gnext() != NULL)
         {
 
+            // checks if new node data can be put between any two nodes.
+            
             if (newnode->gdata() > temp->gdata() && newnode->gdata() < temp->gnext()->gdata())
             {
                 newnode->cnext(temp->gnext());
@@ -90,6 +96,8 @@ void createNode(int n)
 
             temp = temp->gnext();
 
+            //checks if there is a node with same data as the new node.
+            
             if (newnode->gdata() == temp->gdata())
             {
                 newnode->cnext(temp->gnext());
@@ -97,6 +105,8 @@ void createNode(int n)
                 break;
             }
 
+            //checks if new node data is bigger than last node data.
+            
             if (temp->gnext() == NULL && newnode->gdata() > temp->gdata())
             {
                 temp->cnext(newnode);
