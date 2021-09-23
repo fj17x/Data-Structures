@@ -61,6 +61,8 @@ void insert(int search, int choice)
 
     if (choice == 1)
     {
+        // enter before
+        
         if (temp->gdata() == search)
         {
             newtemp->cnext(temp);
@@ -80,6 +82,8 @@ void insert(int search, int choice)
     }
     else if (choice == 2)
     {
+        // enter after
+        
         while (temp != NULL)
         {
             if (temp->gdata() == search)
