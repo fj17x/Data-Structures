@@ -73,22 +73,20 @@ void sort(int n, int choice)
     {
         for (Node *j = head; j->gnext() != NULL; j = j->gnext())
         {
-            if (choice == 1)
+            if (choice == 1)                                // ascending sort
                 if (j->gdata() > j->gnext()->gdata())
                 {
                     temp = j->gnext()->gdata();
                     j->gnext()->cdata(j->gdata());
                     j->cdata(temp);
                 }
-            if (choice == 2)
-            {
+            if (choice == 2)                                // descending sort
                 if (j->gdata() < j->gnext()->gdata())
                 {
                     temp = j->gnext()->gdata();
                     j->gnext()->cdata(j->gdata());
                     j->cdata(temp);
                 }
-            }
         }
     }
 }
