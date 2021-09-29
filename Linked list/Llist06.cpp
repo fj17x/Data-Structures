@@ -73,7 +73,7 @@ int main()
     cin >> n;
     createNode(n);
 
-    cout << "\nNow displaying even data through the nodes...\n";
+    cout << "\nNow displaying odd data through the nodes...\n";
     etravese();
 }
 
