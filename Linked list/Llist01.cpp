@@ -6,14 +6,16 @@ using namespace std;
 class Node
 {
     int data;
+    static int count;
     Node *next;
 
 public:
     void enter(Node *x = NULL)
     {
-        cout << "\n Enter data: ";
+        cout << "Enter data of node " << count << ": ";
         cin >> data;
         next = x;
+        count++;
     }
 
     Node *gnext()
@@ -28,6 +30,8 @@ public:
 
 } n1, n2, n3, n4, n5;
 
+int Node::count = 1;
+
 int main()
 {
     n1.enter(&n2);
@@ -36,9 +40,9 @@ int main()
     n4.enter(&n5);
     n5.enter();
 
-    cout << "\n 1st Node: " << n1.gdata();
-    cout << "\n Accessing 2nd node using first: " << n1.gnext()->gdata();
-    cout << "\n Accessing 3nd node using first: " << n1.gnext()->gnext()->gdata();
-    cout << "\n Accessing 4th node using first: " << n1.gnext()->gnext()->gnext()->gdata();
-    cout << "\n Accessing 5th node using first: " << n1.gnext()->gnext()->gnext()->gnext()->gdata();
+    cout << "\nAccessing the 1st Node: " << n1.gdata();
+    cout << "\nAccessing 2nd node using 1st: " << n1.gnext()->gdata();
+    cout << "\nAccessing 3nd node using 1st: " << n1.gnext()->gnext()->gdata();
+    cout << "\nAccessing 4th node using 1st: " << n1.gnext()->gnext()->gnext()->gdata();
+    cout << "\nAccessing 5th node using 1st: " << n1.gnext()->gnext()->gnext()->gnext()->gdata();
 }
