@@ -3,11 +3,6 @@ using namespace std;
 
 // Display only odd numbers in nodes
 
-#include <iostream>
-using namespace std;
-
-// Display only even numbers in nodes
-
 class Node
 {
     int data;
