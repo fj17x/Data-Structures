@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Create a circular linked list which can delete and insert elements
+// Create a circular linked list in which we can delete and insert an element.
 
 class Node
 {
