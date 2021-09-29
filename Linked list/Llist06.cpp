@@ -54,47 +54,6 @@ void createNode(int n)
     }
 }
 
-void etravese()
-{
-    Node *temp = head;
-
-    while (temp != NULL)
-    {
-        if (temp->gdata() % 2 == 0)
-            cout << "\n " << temp->gdata() << endl;
-        temp = temp->gnext();
-    }
-}
-
-int main()
-{
-    int n;
-    cout << "Enter number of nodes to create: ";
-    cin >> n;
-    createNode(n);
-
-    cout << "\nNow displaying odd data through the nodes...\n";
-    etravese();
-}
-
-
-void createNode(int n)
-{
-    head = new Node;
-    head->enter();
-
-    Node *temp = new Node;
-    temp = head;
-
-    for (int i = 0; i < n - 1; i++)
-    {
-        Node *newnode = new Node;
-        newnode->enter();
-        temp->cnext(newnode);
-        temp = temp->gnext();
-    }
-}
-
 void otravese()
 {
     Node *temp = head;
@@ -114,6 +73,6 @@ int main()
     cin >> n;
     createNode(n);
 
-    cout << "\nNow displaying even data through the nodes...\n";
+    cout << "\nNow displaying odd data through the nodes...\n";
     otravese();
 }
