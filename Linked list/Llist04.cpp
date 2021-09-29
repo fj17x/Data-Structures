@@ -7,13 +7,15 @@ class Node
 {
     int data;
     Node *next;
+    static int count;
 
 public:
     void enter(Node *x = NULL)
     {
-        cout << "\n Enter data of node: ";
+        cout << "Enter data of node " << count << ": ";
         cin >> data;
         next = x;
+        count++;
     }
 
     Node *gnext()
@@ -32,6 +34,8 @@ public:
     }
 
 } * head;
+
+int Node::count = 1;
 
 void createNode(int n)
 {
