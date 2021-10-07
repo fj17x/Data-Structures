@@ -71,6 +71,7 @@ int main()
     int n;
     cout << "Enter number of nodes to create: ";
     cin >> n;
+    if(n>0)
     createNode(n);
 
     cout << "\nNow displaying even data through the nodes...\n";
